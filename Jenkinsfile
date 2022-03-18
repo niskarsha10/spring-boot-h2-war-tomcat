@@ -1,24 +1,19 @@
 pipeline {
-    agent any
-   
-   
-       
-        stage("Run Test cases") {
-            when {
-                branch 'develop';
-            }
+   agent any
+   stages {
+       stage('Build Code') {
            steps {
-              
-            }
-        }
-        
-        stage("Build & Deploy Code") {
-            when {
-                branch 'master'
-            }
-            steps {
-               
-            }
-        }
-    }
- }
+               sh """
+               echo "Building Artifact"
+               """
+           }
+       }
+      stage('Deploy Code') {
+          steps {
+               sh """
+               echo "Deploying Code"
+               """
+          }
+      }
+   }
+}
