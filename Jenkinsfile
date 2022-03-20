@@ -4,14 +4,14 @@ pipeline {
        stage('Build Code') {
            steps {
                sh """
-               echo "Building Artifact. 54321"
+               echo "Building Artifact. 54321abcde"
                """
            }
        }
       stage('Deploy Code') {
           steps {
                sh """
-               echo "Deploying Code, 12345"
+               echo "Deploying Code, abcde12345"
                """
           }
       }
